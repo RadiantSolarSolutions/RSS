@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <!-- JavaScript for Form Submission Handling -->
+    <!-- JavaScript for Form Submission Handling and OTHER System Input Toggle -->
     <script>
         document.getElementById('quote-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
@@ -106,12 +106,23 @@
                 if (response.ok) {
                     alert('SUCCESS! Your quote request has been sent.');
                     this.reset();
+                    document.getElementById('other-system').style.display = 'none'; // Hide OTHER input after form reset
                 } else {
                     alert('FAILED... Please try again later.');
                 }
             }).catch(error => {
                 alert('FAILED... Please try again later.');
             });
+        });
+
+        // JavaScript to toggle "Specify Other System" input
+        document.getElementById('system').addEventListener('change', function() {
+            const otherSystemInput = document.getElementById('other-system');
+            if (this.value === 'OTHER') {
+                otherSystemInput.style.display = 'block';
+            } else {
+                otherSystemInput.style.display = 'none';
+            }
         });
     </script>
 
