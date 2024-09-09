@@ -20,10 +20,12 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
         description: description
     };
 
-    emailjs.send('service_9oxov8m', 'template_iah4myb', templateParams) // Service ID and Template ID
+    emailjs.send("service_9oxov8m", "template_iah4myb", templateParams)
         .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
             alert('SUCCESS! Your quote request has been sent.');
         }, function(error) {
+            console.error('FAILED...', error);
             alert('FAILED... Please try again later.');
         });
 });
