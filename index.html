@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <title>Quote Form</title>
 </head>
 <body>
 
@@ -14,9 +15,9 @@
         </div>
     </header>
 
-    <!-- Quote Form (Moved above the images) -->
+    <!-- Quote Form -->
     <section id="quote-form-section">
-        <form id="quote-form">
+        <form id="quote-form" action="https://formspree.io/f/mqazjvne" method="POST">
             <h2>Get A Free Quote Today!</h2>
             
             <div class="form-row">
@@ -69,11 +70,15 @@
                 <textarea id="description" name="description" rows="4" cols="50"></textarea>
             </div>
 
+            <!-- Spam Protection -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <!-- Submit Button -->
             <input type="submit" value="Send">
         </form>
     </section>
 
-    <!-- Image and Text Description Section (Moved below the form) -->
+    <!-- Image and Text Description Section -->
     <section class="image-text-section">
         <div class="image-text-container left">
             <img src="images/image1.jpg" alt="Image 1">
@@ -88,13 +93,27 @@
         </div>
     </section>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- JavaScript for Form Submission Handling -->
     <script>
-        (function(){
-            emailjs.init("GYHn3YxWwa0izzxKu"); // Replace with your EmailJS PUBLIC KEY
-        })();
+        document.getElementById('quote-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert('SUCCESS! Your quote request has been sent.');
+                    this.reset();
+                } else {
+                    alert('FAILED... Please try again later.');
+                }
+            }).catch(error => {
+                alert('FAILED... Please try again later.');
+            });
+        });
     </script>
-    <script src="scripts.js"></script>
 
 </body>
 </html>
