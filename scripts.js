@@ -10,20 +10,20 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
     const stories = document.getElementById('stories').value;
     const description = document.getElementById('description').value;
 
-    // If "OTHER" is selected in the system dropdown, use the otherSystem input value
-    const systemInfo = system === 'OTHER' ? `Other: ${otherSystem}` : system;
+    const templateParams = {
+        name: name,
+        phone: phone,
+        email: email,
+        system: system === 'OTHER' ? otherSystem : system,
+        arrays: arrays,
+        stories: stories,
+        description: description
+    };
 
-    // Construct the body of the email
-    const body = `
-    Name: ${name}
-    Phone: ${phone}
-    Email: ${email}
-    System Model: ${systemInfo}
-    Number of Solar Arrays: ${arrays}
-    Number of Stories: ${stories}
-    Additional Information: ${description}
-    `;
-
-    // Use mailto to open the default mail client with the subject and body
-    window.location.href = `mailto:radiantsolarsolutions.pa@gmail.com?subject=Quote Request&body=${encodeURIComponent(body)}`;
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            alert('SUCCESS! Your quote request has been sent.');
+        }, function(error) {
+            alert('FAILED... Please try again later.');
+        });
 });
