@@ -10,7 +10,7 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
     const stories = document.getElementById('stories').value;
     const description = document.getElementById('description').value;
 
-    const templateParams = {
+    const message = {
         name: name,
         phone: phone,
         email: email,
@@ -20,12 +20,12 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
         description: description
     };
 
-    emailjs.send("service_9oxov8m", "template_iah4myb", templateParams)
+    emailjs.send("service_9oxov8m", "template_iah4myb", message)
         .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+            //console.log('SUCCESS!', response.status, response.text);
             alert('SUCCESS! Your quote request has been sent.');
         }, function(error) {
-            console.error('FAILED...', error);
+            //console.error('FAILED...', error);
             alert('FAILED... Please try again later.');
         });
 });
