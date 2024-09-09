@@ -20,7 +20,7 @@ document.getElementById('quote-form').addEventListener('submit', function(event)
         description: description
     };
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    emailjs.send('service_9oxov8m', 'template_iah4myb', templateParams) // Service ID and Template ID
         .then(function(response) {
             alert('SUCCESS! Your quote request has been sent.');
         }, function(error) {
