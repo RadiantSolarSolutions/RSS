@@ -7,11 +7,13 @@ body {
     background-color: #22293b; /* Background color */
 }
 
+
+
 /* Header with Logo and Company Name */
 #header-container {
     display: flex;
+    flex-direction: column; /* Stack the logo and label vertically */
     align-items: center;
-    justify-content: center;
     padding: 18px; /* Padding */
     background-color: #22293b; /* Background color */
 }
@@ -19,7 +21,16 @@ body {
 #company-logo {
     width: 480px; /* Width */
     height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add some space below the logo */
 }
+
+#logo-label {
+    color: #e4b127;
+    font-size: 18px; /* Adjust the font size as needed */
+    text-align: center;
+}
+
+
 
 /* Quote Form */
 #quote-form-section {
@@ -71,6 +82,9 @@ body {
     margin-bottom: -22px; /* Negative margin to bring it closer to the button */
     color: rgb(116, 176, 255);
 }
+
+
+
 
 #quote-form input[type="text"],
 #quote-form input[type="email"],
@@ -132,6 +146,9 @@ body {
     background-color: #b1b1b1;
 }
 
+
+
+
 /* Image Section */
 .image-section {
     padding: 18px; /* Padding */
@@ -160,7 +177,3 @@ body {
     flex-direction: row-reverse;
     margin-left: 400px;
 }
-
-
-
-
