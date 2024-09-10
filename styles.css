@@ -30,9 +30,10 @@ body {
 
 /* Quote Form */
 #quote-form-section {
-    padding: 36px 18px; /* Padding */
+    padding: 4px 18px; /* Padding */
     background-color: #2e3850; /* Background color */
     color: white;
+    font-size: 32px;
 }
 
 #quote-form {
@@ -53,15 +54,39 @@ body {
 
 #quote-form label {
     display: block;
-    margin-bottom: 5px; /* Margin */
-    font-size: 24px; /* Font size */
+    margin-bottom: 0px; /* Margin */
+    font-size: 18px; /* Font size */
     color: white;
 }
 
-#quote-form input[type="text"],
-#quote-form input[type="email"],
+#quote-form input[type="text"] {
+    font-size: 18px;
+    padding: 8px;
+}
+
+#quote-form input[type="email"] {
+    font-size: 18px;
+    padding: 8px;
+}
+
+#quote-form input[type="tel"] {
+    font-size: 18px;
+    padding: 8px;
+}
+
+#quote-form input[type="number"] {
+    font-size: 18px;
+    padding: 8px;
+}
+
+#quote-form input[type="address"] {
+    font-size: 18px;
+    padding: 8px;
+}
+
+/* #quote-form input[type="email"],
 #quote-form input[type="tel"],
-#quote-form input[type="number"],
+#quote-form input[type="number"], */
 #quote-form select,
 #quote-form textarea {
     width: 100%; /* Width */
@@ -81,34 +106,39 @@ body {
     width: 100%; /* Width */
     padding: 20px; /* Padding */
     background-color: #007BFF;
+    /* background-color: #007BFF; */
     color: #fff;
     border: none;
     border-radius: 4.5px; /* Border radius */
-    font-size: 18px; /* Font size */
+    font-size: 24px; /* Font size */
     cursor: pointer;
+    margin-bottom: 48px; /* Margin */
+    font-family: 'Corbel', sans-serif;
 }
 
 #quote-form input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Image and Text Description Section */
-.image-text-section {
+
+/* Image Section */
+.image-section {
     padding: 18px; /* Padding */
+    text-align: center;
 }
 
-.image-text-container {
-    margin: 18px auto; /* Margin */
-    padding: 9px 0; /* Padding */
+.image-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 18px; /* Space between rows */
 }
 
-.image-text-container img {
-    width: 906.66px; /* Width */
-    height: 388.8px; /* Height */
+.image-container img {
+    width: 540px; /* Adjust width as needed */
+    height: 540px; /* Adjust height as needed */
+    margin: 0 9px; /* Space between images */
 }
+
 
 /* Adjust for left and right alignment */
 .image-text-container.left {
@@ -120,3 +150,21 @@ body {
     flex-direction: row-reverse;
     margin-left: 400px;
 }
+
+/* Optional Fields Toggle Button */
+#toggle-optional-fields {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #cfcfcf;
+    color: #000000;
+    border: none;
+    border-radius: 4.5px; /* Border radius */
+    font-size: 18px; /* Font size */
+    cursor: pointer;
+}
+
+#toggle-optional-fields:hover {
+    background-color: #cfcfcf;
+}
+
