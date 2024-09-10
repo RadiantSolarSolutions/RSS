@@ -19,7 +19,7 @@ body {
 }
 
 #company-logo {
-    width: 480px; /* Width */
+    width: 320px; /* Width */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px; /* Add some space below the logo */
 }
