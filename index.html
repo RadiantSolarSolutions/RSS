@@ -27,19 +27,8 @@
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number*</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
                     <label for="address">Address*</label>
                     <input type="text" id="address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email*</label>
-                    <input type="email" id="email" name="email" required>
                 </div>
             </div>
 
@@ -48,10 +37,27 @@
                     <label for="zip">Zip Code*</label>
                     <input type="text" id="zip" name="zip" required>
                 </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
             </div>
 
-            <!-- Optional Fields Toggle Button -->
-            <button type="button" id="toggle-optional-fields">Want to speed up the process? Tell us more by clicking here!</button>
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div id="toggle-optional-fields-container">
+                    <label for="toggle-optional-fields">Have more information? Click here!</label>
+                    <button type="button" id="toggle-optional-fields">Show</button>
+                </div>
+            </div>
+            
+
+
+
 
             <!-- Optional Fields -->
             <div id="optional-fields" style="display: none;">
@@ -159,10 +165,10 @@
             const optionalFields = document.getElementById('optional-fields');
             if (optionalFields.style.display === 'none') {
                 optionalFields.style.display = 'block';
-                this.textContent = 'The below fields are not required. Click here to hide them!';
+                this.textContent = 'Hide';
             } else {
                 optionalFields.style.display = 'none';
-                this.textContent = 'Want to speed up the process? Tell us more by clicking here!';
+                this.textContent = 'Show';
             }
         });
     </script>

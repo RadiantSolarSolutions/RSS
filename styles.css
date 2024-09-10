@@ -1,11 +1,4 @@
-@font-face {
-    font-family: 'Corbel';
-    src: url('fonts/CORBELB.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Apply the texture background to the entire page */
+/* General Styles */
 body {
     font-family: 'Corbel', sans-serif;
     margin: 0;
@@ -33,7 +26,7 @@ body {
     padding: 4px 18px; /* Padding */
     background-color: #2e3850; /* Background color */
     color: white;
-    font-size: 32px;
+    font-size: 18px;
 }
 
 #quote-form {
@@ -46,50 +39,47 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    align-items: center; /* Align items vertically */
 }
 
 #quote-form .form-group {
     width: 48%;
+    display: flex;
+    flex-direction: column;
 }
 
-#quote-form label {
-    display: block;
-    margin-bottom: 0px; /* Margin */
-    font-size: 18px; /* Font size */
-    color: white;
+#toggle-optional-fields-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
-#quote-form input[type="text"] {
+#toggle-optional-fields {
+    margin-top: 24px; /* Adjust the top margin for better alignment */
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 4.5px;
     font-size: 18px;
-    padding: 8px;
+    cursor: pointer;
 }
 
-#quote-form input[type="email"] {
-    font-size: 18px;
-    padding: 8px;
+#quote-form label[for="toggle-optional-fields"] {
+    margin-top: 0px; /* Keep the margin above the label removed */
+    margin-bottom: -22px; /* Negative margin to bring it closer to the button */
+    color: rgb(116, 176, 255);
 }
 
-#quote-form input[type="tel"] {
-    font-size: 18px;
-    padding: 8px;
-}
-
-#quote-form input[type="number"] {
-    font-size: 18px;
-    padding: 8px;
-}
-
-#quote-form input[type="address"] {
-    font-size: 18px;
-    padding: 8px;
-}
-
-/* #quote-form input[type="email"],
+#quote-form input[type="text"],
+#quote-form input[type="email"],
 #quote-form input[type="tel"],
-#quote-form input[type="number"], */
+#quote-form input[type="number"],
+#quote-form input[type="address"],
 #quote-form select,
 #quote-form textarea {
-    width: 100%; /* Width */
+    width: 100%; /* Full width */
     padding: 10px; /* Padding */
     margin-bottom: 10px; /* Margin */
     border: 1px solid #575757;
@@ -103,10 +93,9 @@ body {
 }
 
 #quote-form input[type="submit"] {
-    width: 100%; /* Width */
+    width: 100%; /* Full width */
     padding: 20px; /* Padding */
     background-color: #007BFF;
-    /* background-color: #007BFF; */
     color: #fff;
     border: none;
     border-radius: 4.5px; /* Border radius */
@@ -120,6 +109,28 @@ body {
     background-color: #0056b3;
 }
 
+/* Optional Fields Toggle */
+#optional-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#toggle-optional-fields {
+    padding: 10px 20px; /* Padding */
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 4.5px; /* Border radius */
+    font-size: 18px; /* Font size */
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+#toggle-optional-fields:hover {
+    background-color: #b1b1b1;
+}
 
 /* Image Section */
 .image-section {
@@ -139,7 +150,6 @@ body {
     margin: 0 9px; /* Space between images */
 }
 
-
 /* Adjust for left and right alignment */
 .image-text-container.left {
     flex-direction: row;
@@ -151,20 +161,6 @@ body {
     margin-left: 400px;
 }
 
-/* Optional Fields Toggle Button */
-#toggle-optional-fields {
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #cfcfcf;
-    color: #000000;
-    border: none;
-    border-radius: 4.5px; /* Border radius */
-    font-size: 18px; /* Font size */
-    cursor: pointer;
-}
 
-#toggle-optional-fields:hover {
-    background-color: #cfcfcf;
-}
+
 
